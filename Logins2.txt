@@ -1,2 +1,2 @@
-Last|First|User|Pass
+First|Last|User|Pass
 Joe|Manner|JMAN1|1101
