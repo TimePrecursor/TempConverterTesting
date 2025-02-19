@@ -39,6 +39,8 @@ class Window(QMainWindow):
                 x = line.split("|")
                 print(x)
                 if x[2] == usern:
+                    import functionsthing as ft
+                    # ft.passwordstep()
                     print("Found match!")
                     break
                 else:
