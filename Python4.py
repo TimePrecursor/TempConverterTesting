@@ -1,3 +1,4 @@
+from time import sleep
 from typing import Any
 from typing import Any
 
@@ -37,7 +38,7 @@ class Window(QMainWindow):
             for line in lines:
                 x = line.split("|")
                 print(x)
-                if x[0] == usern:
+                if x[2] == usern:
                     print("Found match!")
                     break
                 else:
@@ -58,14 +59,11 @@ class Window(QMainWindow):
 
     # method for widgets
     def UiComponents(self):
-        # self.b1 = QPushButton(self)
-        # self.b1.setCheckable(False)
-        # self.b1.clicked.connect(self.btnstate)
-        # self.b1.setGeometry(150, 150, 20, 20)
-        # self.b1.setCheckable(False)
-
+        self.userlabel = QLabel(self)
+        self.userlabel.setText("Enter Username:")
+        self.userlabel.setGeometry(10,10,100,20)
         self.userin = QLineEdit(self)
-        self.userin.setGeometry(50,10,100,20)
+        self.userin.setGeometry(100,10,100,20)
         self.pushb1 = QPushButton(self)
 
         self.pushb1.setText("Login as")
