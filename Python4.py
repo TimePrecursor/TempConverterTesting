@@ -35,12 +35,16 @@ class Window(QMainWindow):
         with open("Logins2.txt") as file:
             lines = file.readlines()
             print(usern)
-            for line in lines:
+            for pos, line in enumerate(lines):
                 x = line.split("|")
                 print(x)
+                print(x[2])
+                print(pos)
+                passinput = self.passin.text()
+                print(passinput)
                 if x[2] == usern:
                     import functionsthing as ft
-                    # ft.passwordstep()
+                    ft.functionclass.passwordstep(self,x[2],pos,passinput)
                     print("Found match!")
                     break
                 else:
@@ -62,17 +66,28 @@ class Window(QMainWindow):
     # method for widgets
     def UiComponents(self):
         self.userlabel = QLabel(self)
-        self.userlabel.setText("Enter Username:")
-        self.userlabel.setGeometry(10,10,100,20)
+        self.passlabel = QLabel(self)
         self.userin = QLineEdit(self)
-        self.userin.setGeometry(100,10,100,20)
+        self.passin = QLineEdit(self)
         self.pushb1 = QPushButton(self)
 
+        self.userlabel.setText("Enter Username:")
+        self.userlabel.setGeometry(10,10,100,20)
+        self.passlabel.setText("Enter Password:")
+        self.passlabel.setGeometry(10, 50, 100, 20)
+        self.userin.setGeometry(100,10,100,20)
         self.pushb1.setText("Login as")
+        self.pushb1.setGeometry(50, 100, 150, 50)
+        self.pushb1.clicked.connect(self.loginstuff2)
+        self.passin.setGeometry(100,50,100,20)
+        self.passin.setEchoMode(QLineEdit.Password)
+
+
+
+
 
         # connect the button click to a function
-        self.pushb1.clicked.connect(self.loginstuff2)
-        self.pushb1.setGeometry(50, 50, 100, 100)
+
         # # creating a push button
         # button = QPushButton("CLICK", self)
         # # setting geometry of button
