@@ -1,10 +1,13 @@
 class functionclass:
-    def    __init__(self):
-        pass
+    # def    __init__(self):
+    #     pass
 
-    def passwordstep(self,user,pos,passw):
+    def passwordstep(self,pos,passw):
         with open("Logins2.txt") as file:
-            line = file.readline(pos)
-            print(user)
-            if str(line[3]) == passw:
+            lines = file.readlines()
+            x = lines[pos].split("|")
+            print(x[3])
+            if int(x[3]) == int(passw):
                 return True
+            else:
+                return False

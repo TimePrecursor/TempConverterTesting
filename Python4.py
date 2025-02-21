@@ -44,8 +44,11 @@ class Window(QMainWindow):
                 print(passinput)
                 if x[2] == usern:
                     import functionsthing as ft
-                    ft.functionclass.passwordstep(self,x[2],pos,passinput)
-                    print("Found match!")
+                    bool1 = ft.functionclass.passwordstep(self,pos,passinput)
+                    if bool1 == True:
+                        print("TRUE")
+                    else:
+                        print("FALSE")
                     break
                 else:
                     print("No match found!")
