@@ -34,24 +34,22 @@ class Window(QMainWindow):
         usern = self.userin.text()
         with open("Logins2.txt") as file:
             lines = file.readlines()
-            print(usern)
+            # print(usern)
             for pos, line in enumerate(lines):
                 x = line.split("|")
-                print(x)
-                print(x[2])
-                print(pos)
+                # print(x)
+                # print(x[2])
+                # print(pos)
                 passinput = self.passin.text()
-                print(passinput)
                 if x[2] == usern:
                     import PasswordCheck as ft
                     bool1 = ft.functionclass.passwordstep(self,pos,passinput)
                     if bool1 == True:
                         print("TRUE")
                     else:
-                        print("FALSE")
+                        print("Wrong Password!")
+                        break
                     break
-                else:
-                    print("No match found!")
 
     # OLD
     # def loginstuff(self):
