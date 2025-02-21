@@ -43,7 +43,7 @@ class Window(QMainWindow):
                 passinput = self.passin.text()
                 print(passinput)
                 if x[2] == usern:
-                    import functionsthing as ft
+                    import PasswordCheck as ft
                     bool1 = ft.functionclass.passwordstep(self,pos,passinput)
                     if bool1 == True:
                         print("TRUE")
